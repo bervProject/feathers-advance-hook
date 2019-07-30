@@ -1,0 +1,9 @@
+{
+  "name": "@bervproject/feathers-commons-hook",
+  "version": "0.0.1",
+  "description": "Feathers Commons Hook",
+  "main": "lib/index.js",
+  "repository": "git@github.com:bervProject/feathers-commons-hook.git",
+  "author": "Bervianto Leo Pratama <bervianto.leo@gmail.com>",
+  "license": "MIT"
+}
