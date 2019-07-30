@@ -1,2 +1,7 @@
-# feathers-common-hooks
-Feathers Common Hooks Extensible
+# feathers-advance-hooks
+
+Feathers Advance Hooks. 
+
+## License
+
+MIT
