@@ -1,6 +1,6 @@
 {
   "name": "feathers-advance-hook",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Feathers Advance Hook",
   "main": "lib/index.js",
   "repository": "git@github.com:bervProject/feathers-advance-hook.git",
