@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  build:
+    docker: # run the steps with Docker
+      - image: circleci/node:4.8.2 # ...with this image as the primary container; this is where all `steps` will run
+    branches:
+      ignore:
+        - gh-pages
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: update-npm
+          command: 'sudo npm install -g npm@latest'
+      - restore_cache: # special step to restore the dependency cache
+          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install-dependencies-run
+          command: yarn
+      - save_cache: # special step to save the dependency cache
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run: # run coverage report
+          name: code-coverage
+          command: yarn lint
+      - run: # run compiler
+          name: compile
+          command: yarn build
