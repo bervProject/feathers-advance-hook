@@ -6,7 +6,6 @@ jobs:
     branches:
       ignore:
         - gh-pages
-    machine: true
     steps:
       - checkout
       - run:
