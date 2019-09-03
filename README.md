@@ -1,6 +1,18 @@
 # feathers-advance-hooks
 
+[![CircleCI](https://circleci.com/gh/bervProject/feathers-advance-hook.svg?style=svg)](https://circleci.com/gh/bervProject/feathers-advance-hook)
+
 Feathers Advance Hooks.
+
+## Latest Version
+
+0.0.4
+
+## Install
+
+```bash
+yarn add feathers-advance-hook
+```
 
 ## License
 
