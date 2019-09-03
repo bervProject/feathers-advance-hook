@@ -1,44 +1,46 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
-const uuid = require('uuid/v4');
-const mime = require('mime-types');
-const Storage = require('@google-cloud/storage').Storage;
+import { Hook, HookContext } from '@feathersjs/feathers';
+import { Storage } from '@google-cloud/storage';
+import { extensions, lookup } from 'mime-types';
+import { v4 as uuid } from 'uuid';
 
-// eslint-disable-next-line no-unused-vars
-module.exports = function (options = {}) {
-  return async context => {
+export default (): Hook => {
+  return async (context: HookContext) => {
     const { app, method, type } = context;
     if (method === 'create' && type === 'after') {
-      return new Promise((resolve, reject) => {
+      return new Promise<any>((resolve: any, reject: any) => {
         const file = context.params.file;
         if (!file) {
           reject('File not found');
+          return;
         }
-        console.log(file);
 
-        const type = mime.lookup(file.originalname);
+        const fileTypes = lookup(file.originalname);
+
+        if (!fileTypes) {
+          reject('File extension not found');
+          return;
+        }
 
         const storage = new Storage({
           keyFilename: 'src/credentials/google.json',
         });
 
         const bucket = storage.bucket(app.get('bucketName'));
-        const blob = bucket.file(`${uuid()}.${mime.extensions[type][0]}`);
+        const blob = bucket.file(`${uuid()}.${extensions[fileTypes][0]}`);
 
         const stream = blob.createWriteStream({
-          resumable: true,
-          contentType: type,
+          contentType: fileTypes,
           predefinedAcl: 'publicRead',
+          resumable: true,
         });
 
-        stream.on('error', err => {
-          console.error('Error Upload');
-          console.error(err);
+        stream.on('error', (err: any) => {
           reject(err);
         });
 
         stream.on('finish', () => {
-          console.log('Finish Upload');
           context.data.url = `https://storage.googleapis.com/${bucket.name}/${blob.name}`;
           resolve(context);
         });

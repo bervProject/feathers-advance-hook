@@ -1,10 +1,51 @@
 {
   "name": "feathers-advance-hook",
-  "version": "0.0.3",
+  "displayName": "Feathers Advance Hooks",
+  "categories": [
+    "Other"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "version": "0.0.4",
   "description": "Feathers Advance Hook",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:bervProject/feathers-advance-hook.git",
   "author": "Bervianto Leo Pratama <bervianto.leo@gmail.com>",
   "license": "MIT",
-  "private": false
+  "maintainers": [
+    {
+      "email": "bervianto.leo@gmail.com",
+      "name": "Bervianto Leo Pratama",
+      "url": "https://berviantoleo.github.io"
+    }
+  ],
+  "private": false,
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "prettier": "^1.18.2",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.6.2"
+  },
+  "dependencies": {
+    "@feathersjs/feathers": "^4.3.0",
+    "@google-cloud/storage": "^3.2.1",
+    "@types/mime-types": "^2.1.0",
+    "@types/uuid": "^3.4.5",
+    "dist": "^0.1.2",
+    "mime-types": "^2.1.24",
+    "uuid": "^3.3.3"
+  },
+  "keywords": [
+    "FeathersJs",
+    "Library",
+    "Hooks"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"lib/**/*.ts\" \"lib/**/*.js\"",
+    "lint": "tslint -p tsconfig.json"
+  }
 }
