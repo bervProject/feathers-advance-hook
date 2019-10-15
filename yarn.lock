@@ -23,7 +23,7 @@
   resolved "https://registry.yarnpkg.com/@feathersjs/commons/-/commons-4.3.7.tgz#7f85d32d96d250a8a6d4a74f60cc7050b0be80df"
   integrity sha512-AX7fh88MUW3d5T+Zb0lVvwrWqioOhtsCwk9LJtQvexS3CTK6E/xzf6qKFfOv3IQ8x82/6OtMW+F2Yjc3clMFiw==
 
-"@feathersjs/feathers@^4.3.4":
+"@feathersjs/feathers@^4.3.7":
   version "4.3.7"
   resolved "https://registry.yarnpkg.com/@feathersjs/feathers/-/feathers-4.3.7.tgz#ac4be01427b3db88947359e6b605f48d6805335d"
   integrity sha512-gpxWG4B4I3M1C+es2jFh4AEF0L5zcSGhK7zMCB0nZp8R3VJClSJ7qtGcmIrOWPjYVKPcZYqAdFZgFn2T0+tvAA==
@@ -66,7 +66,7 @@
   resolved "https://registry.yarnpkg.com/@google-cloud/promisify/-/promisify-1.0.2.tgz#e581aa79ff71fb6074acc1cc59e3d81bf84ce07b"
   integrity sha512-7WfV4R/3YV5T30WRZW0lqmvZy9hE2/p9MvpI34WuKa2Wz62mLu5XplGTFEMK6uTbJCLWUxTcZ4J4IyClKucE5g==
 
-"@google-cloud/storage@^3.3.0":
+"@google-cloud/storage@^3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-3.4.0.tgz#c965ceb75c686bff7bb87423e9d2df641bdb46b4"
   integrity sha512-y3oIUyuerq/+a6/SmPFVXGdddKgoMzmI5F1eEAh272iqgg6rkoyCuTwk1Ou/eOaq7oJONVm/Q/dSRphy/bMWpw==

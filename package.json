@@ -30,8 +30,8 @@
     "typescript": "^3.6.2"
   },
   "dependencies": {
-    "@feathersjs/feathers": "^4.3.4",
-    "@google-cloud/storage": "^3.3.0",
+    "@feathersjs/feathers": "^4.3.7",
+    "@google-cloud/storage": "^3.4.0",
     "@types/mime-types": "^2.1.0",
     "@types/uuid": "^3.4.5",
     "dist": "^0.1.2",
