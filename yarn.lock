@@ -67,9 +67,9 @@
   integrity sha512-7WfV4R/3YV5T30WRZW0lqmvZy9hE2/p9MvpI34WuKa2Wz62mLu5XplGTFEMK6uTbJCLWUxTcZ4J4IyClKucE5g==
 
 "@google-cloud/storage@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.npmjs.org/@google-cloud/storage/-/storage-4.2.0.tgz#f03a49d4556f08ec000bb9386e12c636f66e783d"
-  integrity sha512-KksntL3RCXShVaUkdxGzFUHvoGylMkOyl33bKe4skyu7NqpM4cQNuiDLg3mE5UOsK87J3p/j2z/TFH/BlzLzHA==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/storage/-/storage-4.3.0.tgz#90118c42817fb2c8b3b8663a0f2857b5b45dda78"
+  integrity sha512-ph0jsUsZ9FPtN40V5eIkKPLUmxnTpxqBDkWxStW/kbQZgoNVGW9vJcbsYSyE4ath7jQIpM4OHu6aqmPFX1OnGw==
   dependencies:
     "@google-cloud/common" "^2.1.1"
     "@google-cloud/paginator" "^2.0.0"
@@ -77,7 +77,7 @@
     arrify "^2.0.0"
     compressible "^2.0.12"
     concat-stream "^2.0.0"
-    date-and-time "^0.11.0"
+    date-and-time "^0.12.0"
     duplexify "^3.5.0"
     extend "^3.0.2"
     gaxios "^2.0.1"
@@ -322,10 +322,10 @@ crypto-random-string@^2.0.0:
   resolved "https://registry.yarnpkg.com/crypto-random-string/-/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
   integrity sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==
 
-date-and-time@^0.11.0:
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.11.0.tgz#1e22b61533af303953d79cc8c5e92e228fc5e4d2"
-  integrity sha512-VyzhHurex4wlg9oMszn7O+kxHchphWjzDn7Mv0WfkFKI6hSNOQePpTBFGsnRakvLNzQKXqPBAVV8DOxUGtUxqA==
+date-and-time@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.12.0.tgz#6d30c91c47fa72edadd628b71ec2ac46909b9267"
+  integrity sha512-n2RJIAp93AucgF/U/Rz5WRS2Hjg5Z+QxscaaMCi6pVZT1JpJKRH+C08vyH/lRR1kxNXnPxgo3lWfd+jCb/UcuQ==
 
 debug@3.1.0:
   version "3.1.0"
