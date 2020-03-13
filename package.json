@@ -7,7 +7,7 @@
   "files": [
     "dist/**/*"
   ],
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Feathers Advance Hook",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,20 +24,20 @@
   "private": false,
   "devDependencies": {
     "@types/mime-types": "^2.1.0",
-    "@types/node": "^13.5.1",
+    "@types/node": "^13.9.1",
     "@types/uuid": "^7.0.0",
     "eslint": "^6.8.0",
     "prettier": "^1.19.1",
-    "tslint": "^6.0.0",
+    "tslint": "^6.1.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@feathersjs/feathers": "^4.5.1",
-    "@google-cloud/storage": "^4.3.0",
+    "@feathersjs/feathers": "^4.5.2",
+    "@google-cloud/storage": "^4.5.0",
     "dist": "^0.1.2",
     "mime-types": "^2.1.26",
-    "uuid": "^7.0.0"
+    "uuid": "^7.0.2"
   },
   "keywords": [
     "FeathersJs",
