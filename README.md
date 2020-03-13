@@ -6,7 +6,7 @@ Feathers Advance Hooks.
 
 ## Latest Version
 
-0.0.5
+[![npm version](https://badge.fury.io/js/feathers-advance-hook.svg)](https://badge.fury.io/js/feathers-advance-hook)
 
 ## Install
 
