@@ -1,5 +1,5 @@
 import feathers, { NullableId, Params } from '@feathersjs/feathers';
-import userAudit from '../../../src/common/user-audit-hook';
+import userAudit from '../../src/common/user-audit-hook';
 
 describe('\'user-audit\' hook', () => {
   let app;

@@ -1,5 +1,5 @@
 import feathers from '@feathersjs/feathers';
-import uploadHook from '../../../src/common/upload-hook';
+import uploadHook from '../../src/common/upload-hook';
 
 describe('\'user-audit\' hook', () => {
   let app;
