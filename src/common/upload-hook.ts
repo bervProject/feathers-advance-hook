@@ -9,7 +9,7 @@ export default (): Hook => {
   return async (context: HookContext) => {
     const { app, method, type } = context;
     if (method === 'create' && type === 'after') {
-      return new Promise<any>((resolve: any, reject: any) => {
+      return new Promise<HookContext>((resolve: any, reject: any) => {
         const file = context.params.file;
         if (!file) {
           reject('File not found');
