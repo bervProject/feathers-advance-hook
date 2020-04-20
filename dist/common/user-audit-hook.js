@@ -38,14 +38,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = (function () {
     return function (context) { return __awaiter(void 0, void 0, void 0, function () {
-        var data, method, type, params, result, paramUser, user, userModifier, paramColumn, paramColumn, paramColumn;
+        var data, method, type, params, result, paramUser, user, userModifier, paramColumn, paramColumn;
         return __generator(this, function (_a) {
             data = context.data, method = context.method, type = context.type, params = context.params;
             if (type === 'after') {
                 // only valid use in before hooks
                 return [2 /*return*/, context];
             }
-            if (method !== 'create' && method !== 'update' && method !== 'remove' && method !== 'patch') {
+            if (method !== 'create' && method !== 'update' && method !== 'patch') {
                 return [2 /*return*/, context];
             }
             result = {};
@@ -61,10 +61,6 @@ exports.default = (function () {
             }
             else if (method === 'update' || method === 'patch') {
                 paramColumn = 'updatedBy';
-                result[paramColumn] = userModifier;
-            }
-            else if (method === 'remove') {
-                paramColumn = 'deletedBy';
                 result[paramColumn] = userModifier;
             }
             context.data = Object.assign(data, result);

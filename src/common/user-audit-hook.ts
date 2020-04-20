@@ -9,7 +9,7 @@ export default (): Hook => {
       // only valid use in before hooks
       return context;
     }
-    if (method !== 'create' && method !== 'update' && method !== 'remove' && method !== 'patch') {
+    if (method !== 'create' && method !== 'update' && method !== 'patch') {
       return context;
     }
     const result: any = {};
@@ -24,9 +24,6 @@ export default (): Hook => {
       result[paramColumn] = userModifier;
     } else if (method === 'update' || method === 'patch') {
       const paramColumn = 'updatedBy';
-      result[paramColumn] = userModifier;
-    } else if (method === 'remove') {
-      const paramColumn = 'deletedBy';
       result[paramColumn] = userModifier;
     }
     context.data = Object.assign(data, result);
