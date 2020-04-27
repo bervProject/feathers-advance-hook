@@ -3,6 +3,7 @@
 ## 0.0.8
 
 * Add type in export
+* Remove delete support for `userAuditHook`
 
 ## 0.0.7
 
