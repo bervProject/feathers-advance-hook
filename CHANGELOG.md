@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 0.0.8
+
+* Add type in export
+
 ## 0.0.7
 
 * Update CI and README
