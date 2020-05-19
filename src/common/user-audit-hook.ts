@@ -1,6 +1,7 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
 import { Hook, HookContext } from '@feathersjs/feathers';
+import { GeneralError } from '@feathersjs/errors';
 const defaultCreatedColumn = 'createdBy';
 const defaultUpdatedColumn = 'updatedBy';
 const defaultDeletedColumn = 'deletedBy';
@@ -13,8 +14,13 @@ export default ({
   userProperty = defaultUserProperty
 } = {}): Hook => {
   return async (context: HookContext) => {
-    const { data, method, service, type, params } = context;
+    const { app, data, method, service, type, params } = context;
     const { disableSoftDelete } = params;
+
+    if (app.version < '4.0.0') {
+      throw new GeneralError('The userAuditHook hook requires Feathers 4.0.0 or later');
+    }
+
     if (type === 'after') {
       // only valid use in before hooks
       return context;
