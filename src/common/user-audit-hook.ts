@@ -40,9 +40,7 @@ export default ({
       result[paramColumn] = userModifier;
       const updatedData = Object.assign(data, result);
       const id = context.id || null;
-      const final = await service.patch(id, updatedData, params);
-      context.result = final;
-      return context;
+      await service.patch(id, updatedData, params);
     }
     context.data = Object.assign(data, result);
     return context;
