@@ -23,25 +23,25 @@
   ],
   "private": false,
   "devDependencies": {
-    "@types/jest": "^26.0.0",
+    "@types/jest": "^26.0.4",
     "@types/mime-types": "^2.1.0",
-    "@types/node": "^14.0.1",
+    "@types/node": "^14.0.22",
     "@types/uuid": "^8.0.0",
-    "jest": "^26.0.1",
+    "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "shx": "^0.3.2",
-    "ts-jest": "^26.0.0",
+    "ts-jest": "^26.1.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.6"
   },
   "dependencies": {
-    "@feathersjs/errors": "^4.5.3",
-    "@feathersjs/feathers": "^4.5.2",
-    "@google-cloud/storage": "^5.0.0",
+    "@feathersjs/errors": "^4.5.5",
+    "@feathersjs/feathers": "^4.5.5",
+    "@google-cloud/storage": "^5.1.2",
     "dist": "^0.1.2",
     "mime-types": "^2.1.27",
-    "uuid": "^8.0.0"
+    "uuid": "^8.2.0"
   },
   "keywords": [
     "FeathersJs",
