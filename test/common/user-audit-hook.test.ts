@@ -1,8 +1,13 @@
-import feathers, { NullableId, Params } from '@feathersjs/feathers';
+import feathers, { NullableId, Params, ServiceMethods, SetupMethod } from '@feathersjs/feathers';
 import userAudit from '../../src/common/user-audit-hook';
 
+interface Message {
+  messages: string[],
+  incrementNode: number
+}
+
 describe('\'user-audit\' hook', () => {
-  let app;
+  let app : Partial<ServiceMethods<Message> & SetupMethod>;
 
   beforeEach(() => {
     // Create a new plain Feathers application
@@ -20,15 +25,27 @@ describe('\'user-audit\' hook', () => {
         return data;
       },
       async get(id: NullableId) {
-        return this.messages[id];
+        if (this.messages && id !== null)
+        {
+          return this.messages[id];
+        }
+        return null;
       },
       async update(id: NullableId, data: any) {
+        if (!this.messages || id === null)
+        {
+          return null;
+        }
         const findingdata = this.messages[id];
         const result = Object.assign(findingdata, data);
         this.messages[id] = result;
         return result;
       },
       async remove(id: NullableId, params: Params) {
+        if (!this.messages || id === null)
+        {
+          return null;
+        }
         const findingdata = this.messages[id];
         this.messages.splice(id, 1);
         return findingdata;

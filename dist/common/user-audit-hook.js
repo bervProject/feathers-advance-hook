@@ -36,35 +36,60 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = (function () {
+var errors_1 = require("@feathersjs/errors");
+var defaultCreatedColumn = 'createdBy';
+var defaultUpdatedColumn = 'updatedBy';
+var defaultDeletedColumn = 'deletedBy';
+var defaultUserProperty = 'email';
+exports.default = (function (_a) {
+    var _b = _a === void 0 ? {} : _a, _c = _b.createdColumn, createdColumn = _c === void 0 ? defaultCreatedColumn : _c, _d = _b.updatedColumn, updatedColumn = _d === void 0 ? defaultUpdatedColumn : _d, _e = _b.deletedColumn, deletedColumn = _e === void 0 ? defaultDeletedColumn : _e, _f = _b.userProperty, userProperty = _f === void 0 ? defaultUserProperty : _f;
     return function (context) { return __awaiter(void 0, void 0, void 0, function () {
-        var data, method, type, params, result, paramUser, user, userModifier, paramColumn, paramColumn;
+        var app, data, method, service, type, params, disableSoftDelete, result, paramUser, user, userModifier, paramColumn, paramColumn, paramColumn, updatedData, id;
         return __generator(this, function (_a) {
-            data = context.data, method = context.method, type = context.type, params = context.params;
-            if (type === 'after') {
-                // only valid use in before hooks
-                return [2 /*return*/, context];
+            switch (_a.label) {
+                case 0:
+                    app = context.app, data = context.data, method = context.method, service = context.service, type = context.type, params = context.params;
+                    disableSoftDelete = params.disableSoftDelete;
+                    if (app.version < '4.0.0') {
+                        throw new errors_1.GeneralError('The userAuditHook hook requires Feathers 4.0.0 or later');
+                    }
+                    if (type === 'after') {
+                        // only valid use in before hooks
+                        return [2 /*return*/, context];
+                    }
+                    if (method !== 'create' && method !== 'update' && method !== 'patch' && method !== 'remove') {
+                        return [2 /*return*/, context];
+                    }
+                    result = {};
+                    paramUser = userProperty;
+                    user = params.user;
+                    userModifier = 'SYSTEM';
+                    if (user && user[paramUser]) {
+                        userModifier = user[paramUser];
+                    }
+                    if (!(method === 'create')) return [3 /*break*/, 1];
+                    paramColumn = createdColumn;
+                    result[paramColumn] = userModifier;
+                    return [3 /*break*/, 4];
+                case 1:
+                    if (!(method === 'update' || method === 'patch')) return [3 /*break*/, 2];
+                    paramColumn = updatedColumn;
+                    result[paramColumn] = userModifier;
+                    return [3 /*break*/, 4];
+                case 2:
+                    if (!(method === 'remove' && !disableSoftDelete)) return [3 /*break*/, 4];
+                    paramColumn = deletedColumn;
+                    result[paramColumn] = userModifier;
+                    updatedData = Object.assign(data, result);
+                    id = context.id || null;
+                    return [4 /*yield*/, service.patch(id, updatedData, params)];
+                case 3:
+                    _a.sent();
+                    _a.label = 4;
+                case 4:
+                    context.data = Object.assign(data, result);
+                    return [2 /*return*/, context];
             }
-            if (method !== 'create' && method !== 'update' && method !== 'patch') {
-                return [2 /*return*/, context];
-            }
-            result = {};
-            paramUser = 'email';
-            user = params.user;
-            userModifier = 'SYSTEM';
-            if (user && user[paramUser]) {
-                userModifier = user[paramUser];
-            }
-            if (method === 'create') {
-                paramColumn = 'createdBy';
-                result[paramColumn] = userModifier;
-            }
-            else if (method === 'update' || method === 'patch') {
-                paramColumn = 'updatedBy';
-                result[paramColumn] = userModifier;
-            }
-            context.data = Object.assign(data, result);
-            return [2 /*return*/, context];
         });
     }); };
 });

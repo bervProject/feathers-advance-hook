@@ -1,5 +1,2 @@
-declare const moduleExports: {
-    uploadHook: () => import("@feathersjs/feathers").Hook<any, import("@feathersjs/feathers").Service<any>>;
-    userAuditHook: () => import("@feathersjs/feathers").Hook<any, import("@feathersjs/feathers").Service<any>>;
-};
+declare const moduleExports: any;
 export default moduleExports;

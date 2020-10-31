@@ -1,3 +1,3 @@
 import { Hook } from '@feathersjs/feathers';
-declare const _default: () => Hook<any, import("@feathersjs/feathers").Service<any>>;
+declare const _default: () => Hook;
 export default _default;

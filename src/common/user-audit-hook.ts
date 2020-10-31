@@ -11,7 +11,7 @@ export default ({
   createdColumn = defaultCreatedColumn,
   updatedColumn = defaultUpdatedColumn,
   deletedColumn = defaultDeletedColumn,
-  userProperty = defaultUserProperty
+  userProperty = defaultUserProperty,
 } = {}): Hook => {
   return async (context: HookContext) => {
     const { app, data, method, service, type, params } = context;

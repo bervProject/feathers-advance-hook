@@ -1,8 +1,8 @@
-import feathers from '@feathersjs/feathers';
+import feathers , { Application } from '@feathersjs/feathers';
 import uploadHook from '../../src/common/upload-hook';
 
 describe('\'user-audit\' hook', () => {
-  let app;
+  let app : Application<any>;
 
   beforeEach(() => {
     // Create a new plain Feathers application
