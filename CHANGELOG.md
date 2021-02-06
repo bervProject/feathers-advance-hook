@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.0...v1.0.1) (2021-02-06)
+
+
+### Bug Fixes
+
+* fix typo ([deca52a](https://github.com/bervProject/feathers-advance-hook/commit/deca52a8043e89921c3ec9b4af222bbffa01c391))
+
 # CHANGELOG
 
 ## 0.0.8
