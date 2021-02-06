@@ -1,13 +1,18 @@
-import feathers, { NullableId, Params, ServiceMethods, SetupMethod } from '@feathersjs/feathers';
+import feathers, {
+  NullableId,
+  Params,
+  ServiceMethods,
+  SetupMethod,
+} from '@feathersjs/feathers';
 import userAudit from '../../src/common/user-audit-hook';
 
 interface Message {
-  messages: string[],
-  incrementNode: number
+  messages: string[];
+  incrementNode: number;
 }
 
-describe('\'user-audit\' hook', () => {
-  let app : Partial<ServiceMethods<Message> & SetupMethod>;
+describe("'user-audit' hook", () => {
+  let app: Partial<ServiceMethods<Message> & SetupMethod>;
 
   beforeEach(() => {
     // Create a new plain Feathers application
@@ -25,15 +30,13 @@ describe('\'user-audit\' hook', () => {
         return data;
       },
       async get(id: NullableId) {
-        if (this.messages && id !== null)
-        {
+        if (this.messages && id !== null) {
           return this.messages[id];
         }
         return null;
       },
       async update(id: NullableId, data: any) {
-        if (!this.messages || id === null)
-        {
+        if (!this.messages || id === null) {
           return null;
         }
         const findingdata = this.messages[id];
@@ -42,14 +45,13 @@ describe('\'user-audit\' hook', () => {
         return result;
       },
       async remove(id: NullableId, params: Params) {
-        if (!this.messages || id === null)
-        {
+        if (!this.messages || id === null) {
           return null;
         }
         const findingdata = this.messages[id];
         this.messages.splice(id, 1);
         return findingdata;
-      }
+      },
     });
 
     app.use('/notaffected', {
@@ -58,7 +60,7 @@ describe('\'user-audit\' hook', () => {
       },
       async update(id: NullableId, data: any) {
         return data;
-      }
+      },
     });
 
     // Register the `processMessage` hook on that service
@@ -66,14 +68,14 @@ describe('\'user-audit\' hook', () => {
       before: {
         get: userAudit(),
         create: userAudit(),
-        update: userAudit()
-      }
+        update: userAudit(),
+      },
     });
 
     app.service('notaffected').hooks({
       after: {
-        create: userAudit()
-      }
+        create: userAudit(),
+      },
     });
   });
 
@@ -84,15 +86,22 @@ describe('\'user-audit\' hook', () => {
     const params = { user };
 
     // Create a new message with params that contains our user
-    const message = await app.service('messages').create({
-      text: 'Hi there'
-    }, params);
+    const message = await app.service('messages').create(
+      {
+        text: 'Hi there',
+      },
+      params,
+    );
     expect(message.createdBy).toEqual('test@test.com');
 
     // assume id one
-    const updatedMessage = await app.service('messages').update(0, {
-      text: message.text
-    }, params);
+    const updatedMessage = await app.service('messages').update(
+      0,
+      {
+        text: message.text,
+      },
+      params,
+    );
     expect(updatedMessage.updatedBy).toEqual('test@test.com');
 
     const afterHook = await app.service('messages').get(0);
@@ -102,7 +111,7 @@ describe('\'user-audit\' hook', () => {
   it('without user in message', async () => {
     // Create a new message with params that contains our user
     const message = await app.service('messages').create({
-      text: 'Hi there'
+      text: 'Hi there',
     });
 
     expect(message.text).toEqual('Hi there');
@@ -116,9 +125,12 @@ describe('\'user-audit\' hook', () => {
     // The service method call `params`
     const params = { user };
 
-    const afterHook = await app.service('notaffected').create({
-      text: 'Hellow'
-    }, params);
+    const afterHook = await app.service('notaffected').create(
+      {
+        text: 'Hellow',
+      },
+      params,
+    );
 
     expect(afterHook.createdBy).toEqual(undefined);
   });

@@ -23,8 +23,9 @@ export default (): Hook => {
           return;
         }
 
+        const keyFileName = app.get('keyPath') || 'src/credentials/google.json';
         const storage = new Storage({
-          keyFilename: 'src/credentials/google.json',
+          keyFilename: keyFileName,
         });
 
         const bucket = storage.bucket(app.get('bucketName'));

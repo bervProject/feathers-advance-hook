@@ -1,8 +1,8 @@
-import feathers , { Application } from '@feathersjs/feathers';
+import feathers, { Application } from '@feathersjs/feathers';
 import uploadHook from '../../src/common/upload-hook';
 
-describe('\'user-audit\' hook', () => {
-  let app : Application<any>;
+describe("'user-audit' hook", () => {
+  let app: Application<any>;
 
   beforeEach(() => {
     // Create a new plain Feathers application
@@ -13,14 +13,14 @@ describe('\'user-audit\' hook', () => {
     app.use('/uploads', {
       async create(data: any) {
         return data;
-      }
+      },
     });
 
     // Register the `processMessage` hook on that service
     app.service('uploads').hooks({
       before: {
-        create: uploadHook()
-      }
+        create: uploadHook(),
+      },
     });
   });
 

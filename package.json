@@ -1,5 +1,5 @@
 {
-  "name": "feathers-advance-hook",
+  "name": "@bervproject/feathers-advance-hook",
   "displayName": "Feathers Advance Hooks",
   "categories": [
     "Other"
@@ -8,8 +8,10 @@
     "dist/**/*"
   ],
   "version": "0.0.9",
+  "source": "src/index.ts",
   "description": "Feathers Advance Hook",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "repository": "git@github.com:bervProject/feathers-advance-hook.git",
   "author": "Bervianto Leo Pratama <bervianto.leo@gmail.com>",
@@ -23,29 +25,46 @@
   ],
   "private": false,
   "devDependencies": {
-    "@types/jest": "^26.0.4",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.13",
+    "@rollup/plugin-babel": "^5.2.3",
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/npm": "^7.0.10",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "@types/jest": "^26.0.20",
     "@types/mime-types": "^2.1.0",
-    "@types/node": "^14.0.22",
-    "@types/uuid": "^8.0.0",
-    "jest": "^26.4.2",
-    "prettier": "^2.1.2",
-    "shx": "^0.3.2",
-    "ts-jest": "^26.4.0",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.0.5"
+    "@types/node": "^14.14.25",
+    "@types/uuid": "^8.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "rollup": "^2.38.5",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-sizes": "^1.0.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "semantic-release": "^17.3.7",
+    "shx": "^0.3.3",
+    "ts-jest": "^26.5.0",
+    "typescript": "^4.1.3"
   },
   "dependencies": {
-    "@feathersjs/errors": "^4.5.9",
-    "@feathersjs/feathers": "^4.5.9",
-    "@google-cloud/storage": "^5.3.0",
+    "@feathersjs/errors": "^4.5.11",
+    "@feathersjs/feathers": "^4.5.11",
+    "@google-cloud/storage": "^5.7.4",
     "dist": "^0.1.2",
-    "mime-types": "^2.1.27",
-    "uuid": "^8.3.0"
+    "mime-types": "^2.1.28",
+    "uuid": "^8.3.2"
   },
   "peerDependencies": {
-    "@feathersjs/feathers": ">=4.0",
-    "@feathersjs/errors": ">=4.0"
+    "@feathersjs/errors": ">=4.0",
+    "@feathersjs/feathers": ">=4.0"
   },
   "keywords": [
     "FeathersJs",
@@ -53,11 +72,14 @@
     "Hooks"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "test": "yarn run compile && yarn run jest",
-    "jest": "jest  --forceExit",
-    "compile": "shx rm -rf lib/ && tsc"
+    "lint": "eslint \"*/**/*.{js,ts}\"",
+    "fix-lint": "eslint \"*/**/*.{js,ts}\" --quiet --fix",
+    "test": "jest  --forceExit"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
   }
 }

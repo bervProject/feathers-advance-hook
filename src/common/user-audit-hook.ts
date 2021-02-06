@@ -18,14 +18,21 @@ export default ({
     const { disableSoftDelete } = params;
 
     if (app.version < '4.0.0') {
-      throw new GeneralError('The userAuditHook hook requires Feathers 4.0.0 or later');
+      throw new GeneralError(
+        'The userAuditHook hook requires Feathers 4.0.0 or later',
+      );
     }
 
     if (type === 'after') {
       // only valid use in before hooks
       return context;
     }
-    if (method !== 'create' && method !== 'update' && method !== 'patch' && method !== 'remove') {
+    if (
+      method !== 'create' &&
+      method !== 'update' &&
+      method !== 'patch' &&
+      method !== 'remove'
+    ) {
       return context;
     }
     const result: any = {};

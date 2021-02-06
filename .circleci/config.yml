@@ -27,3 +27,6 @@ jobs:
       - run: # run compiler
           name: compile
           command: yarn build
+      - run: # run test
+          name: test
+          command: yarn test
