@@ -1,21 +1,17 @@
-# feathers-advance-hooks
+# Feathers Advance Hooks
 
 Feathers Advance Hooks.
 
 ## Build Status
 
-| CircleCI | Github Action (Test) | Github Action (Publish) | Codecov |
-|:--------:|:--------------------:|:-----------------------:|:-------:|
-| [![CircleCI](https://circleci.com/gh/bervProject/feathers-advance-hook.svg?style=svg)](https://circleci.com/gh/bervProject/feathers-advance-hook) | ![Node CI](https://github.com/bervProject/feathers-advance-hook/workflows/Node%20CI/badge.svg) | ![Node.js Package](https://github.com/bervProject/feathers-advance-hook/workflows/Node.js%20Package/badge.svg) | [![codecov](https://codecov.io/gh/bervProject/feathers-advance-hook/branch/master/graph/badge.svg)](https://codecov.io/gh/bervProject/feathers-advance-hook) |
-
-## Latest Version
-
-[![npm version](https://badge.fury.io/js/feathers-advance-hook.svg)](https://badge.fury.io/js/feathers-advance-hook)
+| CircleCI | Github Action (Test) | Codecov |
+|:--------:|:--------------------:|:-------:|
+| [![CircleCI](https://circleci.com/gh/bervProject/feathers-advance-hook.svg?style=svg)](https://circleci.com/gh/bervProject/feathers-advance-hook) | ![Node CI](https://github.com/bervProject/feathers-advance-hook/workflows/Node%20CI/badge.svg) | [![codecov](https://codecov.io/gh/bervProject/feathers-advance-hook/branch/master/graph/badge.svg)](https://codecov.io/gh/bervProject/feathers-advance-hook) |
 
 ## Install
 
 ```bash
-yarn add feathers-advance-hook
+yarn add @bervproject/feathers-advance-hook
 ```
 
 ## License
