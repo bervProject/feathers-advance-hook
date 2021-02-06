@@ -13,7 +13,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "repository": "git@github.com:bervProject/feathers-advance-hook.git",
+  "repository": "https://github.com/bervProject/feathers-advance-hook.git",
   "author": "Bervianto Leo Pratama <bervianto.leo@gmail.com>",
   "license": "MIT",
   "maintainers": [
