@@ -9,6 +9,7 @@ export default (): Hook => {
   return async (context: HookContext) => {
     const { app, method, type } = context;
     if (method === 'create' && type === 'after') {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return new Promise<HookContext>((resolve: any, reject: any) => {
         const file = context.params.file;
         if (!file) {
@@ -37,6 +38,7 @@ export default (): Hook => {
           resumable: true,
         });
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         stream.on('error', (err: any) => {
           reject(err);
         });

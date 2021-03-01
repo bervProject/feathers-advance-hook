@@ -35,6 +35,7 @@ export default ({
     ) {
       return context;
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const result: any = {};
     const paramUser = userProperty;
     const user = params.user;

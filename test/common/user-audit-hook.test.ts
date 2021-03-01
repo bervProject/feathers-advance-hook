@@ -23,6 +23,7 @@ describe("'user-audit' hook", () => {
     app.use('/messages', {
       messages: [],
       incrementNode: 0,
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async create(data: any) {
         data.id = this.incrementNode;
         this.messages.push(data);
@@ -35,6 +36,7 @@ describe("'user-audit' hook", () => {
         }
         return null;
       },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async update(id: NullableId, data: any) {
         if (!this.messages || id === null) {
           return null;
@@ -44,6 +46,7 @@ describe("'user-audit' hook", () => {
         this.messages[id] = result;
         return result;
       },
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       async remove(id: NullableId, params: Params) {
         if (!this.messages || id === null) {
           return null;
@@ -55,9 +58,11 @@ describe("'user-audit' hook", () => {
     });
 
     app.use('/notaffected', {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async create(data: any) {
         return data;
       },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async update(id: NullableId, data: any) {
         return data;
       },
