@@ -61,7 +61,7 @@
     "@feathersjs/feathers": "^4.5.11",
     "@google-cloud/storage": "^5.8.0",
     "dist": "^0.1.2",
-    "mime-types": "^2.1.28",
+    "mime-types": "^2.1.29",
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
