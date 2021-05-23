@@ -1,4 +1,4 @@
-import { BadRequest } from '@feathersjs/errors';
+import { BadRequest, GeneralError } from '@feathersjs/errors';
 import feathers, { Application } from '@feathersjs/feathers';
 import uploadHook from '../../src/common/upload-hook';
 
@@ -44,6 +44,29 @@ describe("'user-audit' hook", () => {
     };
     await expect(app.service('uploads').create({}, params)).rejects.toThrow(
       BadRequest,
+    );
+  });
+
+  it('upload failed because google cloud not setup bucketname', async () => {
+    const params = {
+      file: {
+        originalname: 'randomname.txt',
+      },
+    };
+    await expect(app.service('uploads').create({}, params)).rejects.toThrow(
+      Error,
+    );
+  });
+
+  it('upload failed because google cloud wrong credential', async () => {
+    app.set('bucketName', 'test');
+    const params = {
+      file: {
+        originalname: 'randomname.txt',
+      },
+    };
+    await expect(app.service('uploads').create({}, params)).rejects.toThrow(
+      GeneralError,
     );
   });
 });
