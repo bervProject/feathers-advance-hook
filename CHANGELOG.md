@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.4...v1.0.5) (2021-05-23)
+
+
+### Bug Fixes
+
+* update test suite, add new error test for more coverage ([c6e2ff5](https://github.com/bervProject/feathers-advance-hook/commit/c6e2ff5113e5fc22407475202374b4b6e127bd34))
+
 ## [1.0.4](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.3...v1.0.4) (2021-05-23)
 
 
