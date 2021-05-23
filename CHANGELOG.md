@@ -1,3 +1,11 @@
+## [1.0.4](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.3...v1.0.4) (2021-05-23)
+
+
+### Bug Fixes
+
+* update with proper error return for upload-hook and add some failed test ([e32abb6](https://github.com/bervProject/feathers-advance-hook/commit/e32abb6de8112c88ed9a40d156961d856cde5cfb))
+* update yarn.lock ([dcb5527](https://github.com/bervProject/feathers-advance-hook/commit/dcb552726520d59c1ea09385e6d3c4917c7d1e71))
+
 ## [1.0.3](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.2...v1.0.3) (2021-03-01)
 
 
