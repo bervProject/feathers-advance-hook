@@ -1,6 +1,7 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
 import { Hook, HookContext } from '@feathersjs/feathers';
+import { BadRequest, GeneralError } from '@feathersjs/errors';
 import { Storage } from '@google-cloud/storage';
 import { extensions, lookup } from 'mime-types';
 import { v4 as uuid } from 'uuid';
@@ -13,14 +14,14 @@ export default (): Hook => {
       return new Promise<HookContext>((resolve: any, reject: any) => {
         const file = context.params.file;
         if (!file) {
-          reject('File not found');
+          reject(new BadRequest('File not found'));
           return;
         }
 
         const fileTypes = lookup(file.originalname);
 
         if (!fileTypes) {
-          reject('File extension not found');
+          reject(new BadRequest('File extension not found'));
           return;
         }
 
@@ -40,7 +41,7 @@ export default (): Hook => {
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         stream.on('error', (err: any) => {
-          reject(err);
+          reject(new GeneralError(err));
         });
 
         stream.on('finish', () => {

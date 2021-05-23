@@ -14,7 +14,7 @@ interface Message {
 describe("'user-audit' hook", () => {
   let app: Partial<ServiceMethods<Message> & SetupMethod>;
 
-  beforeEach(() => {
+  beforeAll(() => {
     // Create a new plain Feathers application
     app = feathers();
 

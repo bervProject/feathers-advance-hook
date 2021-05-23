@@ -5,7 +5,9 @@
     "rootDir": "src",
     "declaration": true,
     "outDir": "./dist",
+    "moduleResolution": "node",
     "declarationDir": "./dist",
+    "esModuleInterop": true,
     "lib": [
       "es2015",
       "es2017"

@@ -1,3 +1,4 @@
+import { BadRequest } from '@feathersjs/errors';
 import feathers, { Application } from '@feathersjs/feathers';
 import uploadHook from '../../src/common/upload-hook';
 
@@ -5,7 +6,7 @@ describe("'user-audit' hook", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let app: Application<any>;
 
-  beforeEach(() => {
+  beforeAll(() => {
     // Create a new plain Feathers application
     app = feathers();
 
@@ -20,14 +21,29 @@ describe("'user-audit' hook", () => {
 
     // Register the `processMessage` hook on that service
     app.service('uploads').hooks({
-      before: {
+      after: {
         create: uploadHook(),
       },
     });
   });
 
-  it('upload success', async () => {
-    // A user stub with just an `_id`
-    expect(true).toBe(true);
+  it('upload failed because not have any file', async () => {
+    const params = {
+      file: null,
+    };
+    await expect(app.service('uploads').create({}, params)).rejects.toThrow(
+      BadRequest,
+    );
+  });
+
+  it('upload failed because wrong filename', async () => {
+    const params = {
+      file: {
+        originalname: 'randomname',
+      },
+    };
+    await expect(app.service('uploads').create({}, params)).rejects.toThrow(
+      BadRequest,
+    );
   });
 });

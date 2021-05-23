@@ -1,3 +1,12 @@
 tsconfig.json
-tslint.json
-.prettierrc
+.prettierrc.js
+coverage/
+.github/
+.circleci
+rollup.config.js
+babel.config.js
+.eslintrc.js
+.eslintignore
+test/
+jest.config.js
+test/
