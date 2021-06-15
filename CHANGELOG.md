@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.6...v1.0.7) (2021-06-15)
+
+
+### Bug Fixes
+
+* remove docs dir ([e787974](https://github.com/bervProject/feathers-advance-hook/commit/e7879740185ef73fd899981229a8c65e72e2775f))
+
 ## [1.0.6](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.5...v1.0.6) (2021-06-15)
 
 
