@@ -10,3 +10,4 @@ babel.config.js
 test/
 jest.config.js
 test/
+docs/
