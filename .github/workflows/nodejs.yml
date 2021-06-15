@@ -17,11 +17,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - name: install, test, build
+    - name: Build, Test and Generate Docs
       run: |
         yarn --frozen-lockfile
+        yarn lint
         yarn test
         yarn build
+        yarn docs
       env:
         CI: true
     - uses: codecov/codecov-action@v1
@@ -32,3 +34,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Docs Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs

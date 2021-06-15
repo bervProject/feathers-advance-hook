@@ -7,12 +7,19 @@ const defaultUpdatedColumn = 'updatedBy';
 const defaultDeletedColumn = 'deletedBy';
 const defaultUserProperty = 'email';
 
+export interface UserAuditHookOptions {
+  createdColumn?: string;
+  updatedColumn?: string;
+  deletedColumn?: string;
+  userProperty?: string;
+}
+
 export default ({
   createdColumn = defaultCreatedColumn,
   updatedColumn = defaultUpdatedColumn,
   deletedColumn = defaultDeletedColumn,
   userProperty = defaultUserProperty,
-} = {}): Hook => {
+}: UserAuditHookOptions = {}): Hook => {
   return async (context: HookContext) => {
     const { app, data, method, service, type, params } = context;
     const { disableSoftDelete } = params;
