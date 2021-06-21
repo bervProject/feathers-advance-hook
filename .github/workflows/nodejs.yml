@@ -35,7 +35,20 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Docs Deploy
+      if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
+    - name: Use Node.js ${{ matrix.node-version }}
+      if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        registry-url: 'https://registry.npmjs.org'
+        scope: '@bervproject'
+    - name: Publish to NPM
+      if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
+      run: yarn publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN  }}
