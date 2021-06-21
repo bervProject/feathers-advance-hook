@@ -47,6 +47,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         registry-url: 'https://registry.npmjs.org'
         scope: '@bervproject'
+        always-auth: true
     - name: Publish to NPM
       if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
       run: yarn publish
