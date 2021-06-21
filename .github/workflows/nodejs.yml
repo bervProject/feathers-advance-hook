@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@bervproject'
+        always-auth: true
     - name: Build, Test and Generate Docs
       run: |
         yarn --frozen-lockfile
