@@ -82,9 +82,5 @@
     "lint": "eslint \"*/**/*.{js,ts}\"",
     "fix-lint": "eslint \"*/**/*.{js,ts}\" --quiet --fix",
     "test": "jest  --forceExit"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "public"
   }
 }
