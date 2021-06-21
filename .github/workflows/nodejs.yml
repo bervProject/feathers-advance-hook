@@ -20,15 +20,18 @@ jobs:
         registry-url: 'https://npm.pkg.github.com'
         scope: '@bervproject'
         always-auth: true
-    - name: Build, Test and Generate Docs
-      run: |
-        yarn --frozen-lockfile
-        yarn lint
-        yarn test
-        yarn build
-        yarn docs
+    - name: Install Package
+      run: yarn --frozen-lockfile
       env:
         CI: true
+    - name: Lint Source Code
+      run: yarn lint
+    - name: Unit Test
+      run: yarn test
+    - name: Build Package
+      run: yarn build
+    - name: Build Docs
+      run: yarn docs
     - uses: codecov/codecov-action@v1
       if: ${{ matrix.node-version == '14.x'}}
     - name: Release
@@ -53,7 +56,7 @@ jobs:
         always-auth: true
     - name: Publish to NPM
       if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
-      run: npm publish --access public
+      run: yarn publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
