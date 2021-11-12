@@ -58,6 +58,7 @@ jobs:
         always-auth: true
     - name: Publish to NPM
       if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
+      continue-on-error: true
       run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
