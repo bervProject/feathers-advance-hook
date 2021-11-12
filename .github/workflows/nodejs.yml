@@ -57,8 +57,7 @@ jobs:
         scope: '@bervproject'
         always-auth: true
     - name: Publish to NPM
-      if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
-      continue-on-error: true
+      if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[package]') && matrix.node-version == '14.x' }}
       run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
