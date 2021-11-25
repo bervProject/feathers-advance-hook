@@ -5,8 +5,7 @@ on:
       - master
   pull_request:
 jobs:
-  build:
-    if: "!contains(github.event.head_commit.message, 'skip ci')"
+  test:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
@@ -34,31 +33,74 @@ jobs:
       run: yarn docs
     - uses: codecov/codecov-action@v1
       if: ${{ matrix.node-version == '14.x'}}
+  release:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-18.04
+    needs: test
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 14
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@bervproject'
+        always-auth: true
+    - name: Install Package
+      run: yarn --frozen-lockfile
+      env:
+        CI: true
+    - name: Build Package
+      run: yarn build
     - name: Release
-      if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
       run: npx semantic-release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Docs Deploy
-      if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Verify Changed files
+      uses: tj-actions/verify-changed-files@v8.7
+      id: verify-changed-files
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
-    - name: Use Node.js ${{ matrix.node-version }}
-      if: ${{ github.event_name == 'push' && matrix.node-version == '14.x' }}
+        files: |
+           src/
+           package.json
+           yarn.lock
+    - name: Use Node.js 14
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '14.x'
         registry-url: 'https://registry.npmjs.org'
         scope: '@bervproject'
         always-auth: true
     - name: Publish to NPM
-      if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[package]') && matrix.node-version == '14.x' }}
+      if: ${{ contains(github.event.head_commit.message, '[package]') || steps.verify-changed-files.outputs.files_changed == 'true' }}
       run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  docs:
+    if: ${{ github.event_name == 'push' }}
+    needs: test
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@bervproject'
+        always-auth: true
+    - name: Install Package
+      run: yarn --frozen-lockfile
+      env:
+        CI: true
+    - name: Build Docs
+      run: yarn docs
+    - name: Docs Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./docs
