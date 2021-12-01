@@ -8,6 +8,7 @@
     "moduleResolution": "node",
     "declarationDir": "./dist",
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "lib": [
       "es2015",
       "es2017"
