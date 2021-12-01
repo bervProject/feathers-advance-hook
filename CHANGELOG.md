@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.8...v1.1.0) (2021-12-01)
+
+
+### Features
+
+* add cache action ([#288](https://github.com/bervProject/feathers-advance-hook/issues/288)) ([2015d80](https://github.com/bervProject/feathers-advance-hook/commit/2015d80753da720fb27fd9c56b3ae794fe3ee8c7))
+
 ## [1.0.8](https://github.com/bervProject/feathers-advance-hook/compare/v1.0.7...v1.0.8) (2021-06-21)
 
 
