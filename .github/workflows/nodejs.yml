@@ -30,7 +30,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - name: Install Package
-      if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
       run: yarn --frozen-lockfile
       env:
         CI: true
@@ -68,7 +67,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - name: Install Package
-      if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
       run: yarn --frozen-lockfile
       env:
         CI: true
@@ -126,7 +124,6 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-yarn-
     - name: Install Package
-      if: ${{ steps.yarn-cache.outputs.cache-hit != 'true' }}
       run: yarn --frozen-lockfile
       env:
         CI: true
