@@ -72,13 +72,6 @@ jobs:
         CI: true
     - name: Build Package
       run: yarn build
-    - name: Release
-      run: npx semantic-release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Verify Changed files
       uses: tj-actions/verify-changed-files@v8.8
       id: verify-changed-files
@@ -87,6 +80,13 @@ jobs:
            src/
            package.json
            yarn.lock
+    - name: Release
+      run: npx semantic-release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Use Node.js 14
       uses: actions/setup-node@v2.4.1
       with:
