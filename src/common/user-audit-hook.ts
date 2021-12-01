@@ -2,18 +2,42 @@
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
 import { Hook, HookContext } from '@feathersjs/feathers';
 import { GeneralError } from '@feathersjs/errors';
+
+// default type definition
 const defaultCreatedColumn = 'createdBy';
 const defaultUpdatedColumn = 'updatedBy';
 const defaultDeletedColumn = 'deletedBy';
 const defaultUserProperty = 'email';
 
+/**
+ * UserAuditHookOptions
+ * Available options `createdColumn`, `updatedColumn`, `deletedColumn`, `userProperty`
+ */
 export interface UserAuditHookOptions {
+  /**
+   * Define to `createdColumn` for select which column will be filled when insert, by default using `createdBy`
+   */
   createdColumn?: string;
+  /**
+   * Define to `updatedColumn` for select which column will be filled when update/patch, by default using `updatedBy`
+   */
   updatedColumn?: string;
+  /**
+   * Define to `deletedColumn` for select which column will be filled when delete operation, only happened when use softDelete, by default using `deletedBy`
+   */
   deletedColumn?: string;
+  /**
+   * Define to `userProperty` for select which column from user entity that will be filled to the audit columns, by default using `email`
+   */
   userProperty?: string;
 }
 
+/**
+ * UserAuditHook
+ * Input options {@link UserAuditHookOptions}
+ * @param {UserAuditHookOptions} options
+ * @returns {Hook} UserAuditHook
+ */
 export default ({
   createdColumn = defaultCreatedColumn,
   updatedColumn = defaultUpdatedColumn,
