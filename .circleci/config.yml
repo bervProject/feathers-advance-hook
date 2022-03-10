@@ -1,23 +1,24 @@
-version: 2
+version: 2.1
+orbs:
+  node: circleci/node@5.0.0
 jobs:
   build:
     docker: # run the steps with Docker
       - image: circleci/node:lts # ...with this image as the primary container; this is where all `steps` will run
     branches:
       ignore:
-        - gh-pages
+        - "gh-pages"
     steps:
       - checkout
-      - run:
-          name: update-npm
-          command: 'sudo npm install -g npm@latest'
-      - restore_cache: # special step to restore the dependency cache
-          # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
           name: install-dependencies-run
           command: yarn --frozen-lockfile
-      - save_cache: # special step to save the dependency cache
+      - save_cache:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - ./node_modules
