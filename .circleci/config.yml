@@ -5,9 +5,6 @@ jobs:
   build:
     docker: # run the steps with Docker
       - image: circleci/node:lts # ...with this image as the primary container; this is where all `steps` will run
-    branches:
-      ignore:
-        - "gh-pages"
     steps:
       - checkout
       - node/install:
