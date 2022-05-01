@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/bervProject/feathers-advance-hook/compare/v1.2.2...v1.2.3) (2022-05-01)
+
+
+### Bug Fixes
+
+* revert jest ([39acb21](https://github.com/bervProject/feathers-advance-hook/commit/39acb210faece5d8db2ab0fbaaf06146e4beaaa2))
+
 ## [1.2.2](https://github.com/bervProject/feathers-advance-hook/compare/v1.2.1...v1.2.2) (2022-05-01)
 
 
