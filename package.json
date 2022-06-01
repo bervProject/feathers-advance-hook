@@ -61,7 +61,7 @@
   "dependencies": {
     "@feathersjs/errors": "^4.5.12",
     "@feathersjs/feathers": "^4.5.12",
-    "@google-cloud/storage": "^5.19.4",
+    "@google-cloud/storage": "^6.0.1",
     "dist": "^0.1.2",
     "mime-types": "^2.1.35",
     "uuid": "^8.3.2"
