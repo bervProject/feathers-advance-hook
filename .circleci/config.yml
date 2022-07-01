@@ -4,7 +4,7 @@ orbs:
 jobs:
   build:
     docker: # run the steps with Docker
-      - image: circleci/node:lts # ...with this image as the primary container; this is where all `steps` will run
+      - image: cimg/node:lts # ...with this image as the primary container; this is where all `steps` will run
     steps:
       - checkout
       - node/install:
