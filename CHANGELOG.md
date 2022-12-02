@@ -1,3 +1,11 @@
+## [1.2.8](https://github.com/bervProject/feathers-advance-hook/compare/v1.2.7...v1.2.8) (2022-12-02)
+
+
+### Bug Fixes
+
+* manual dirname ([b551ea8](https://github.com/bervProject/feathers-advance-hook/commit/b551ea8fbb1ba8c3ffa1b2734f5ab75858ca2cbd))
+* update deps ([e80e99f](https://github.com/bervProject/feathers-advance-hook/commit/e80e99fd515d0d5942ffe6113196fdc00a312c4a))
+
 ## [1.2.7](https://github.com/bervProject/feathers-advance-hook/compare/v1.2.6...v1.2.7) (2022-09-30)
 
 
