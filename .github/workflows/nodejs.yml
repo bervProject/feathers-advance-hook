@@ -4,7 +4,7 @@ on:
     branches: ['main']
 jobs:
   test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       matrix:
         node-version: [16.x, 18.x]
@@ -40,4 +40,4 @@ jobs:
     - name: Build Docs
       run: yarn docs
     - uses: codecov/codecov-action@v3.1.1
-      if: ${{ matrix.node-version == '16.x'}}
+      if: ${{ matrix.node-version == '18.x'}}

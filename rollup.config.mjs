@@ -1,4 +1,4 @@
-// rollup.config.js
+// rollup.config.mjs
 import typescript from 'rollup-plugin-typescript2';
 import babel from '@rollup/plugin-babel';
 import { nodeResolve as resolve } from '@rollup/plugin-node-resolve';
