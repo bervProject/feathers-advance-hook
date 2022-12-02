@@ -7,9 +7,12 @@ import del from 'rollup-plugin-delete';
 import sizes from 'rollup-plugin-sizes';
 import { terser } from 'rollup-plugin-terser';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import pkg from './package.json' assert { type: "json" };
 
 const extensions = ['.ts'];
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export default {
   input: pkg.source,
