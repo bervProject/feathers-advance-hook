@@ -45,7 +45,7 @@ jobs:
     - name: Build Package
       run: yarn build
     - name: Verify Changed files
-      uses: tj-actions/verify-changed-files@v12.0
+      uses: tj-actions/verify-changed-files@v13.1
       id: verify-changed-files
       with:
         files: |
