@@ -60,7 +60,7 @@
   },
   "dependencies": {
     "@feathersjs/errors": "^4.5.15",
-    "@feathersjs/feathers": "^4.5.15",
+    "@feathersjs/feathers": "^5.0.0",
     "@google-cloud/storage": "^6.9.3",
     "dist": "^0.1.2",
     "mime-types": "^2.1.35",
