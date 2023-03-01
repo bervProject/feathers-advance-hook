@@ -985,12 +985,10 @@
   resolved "https://registry.npmjs.org/@feathersjs/commons/-/commons-4.5.15.tgz#2f9c2599fd93607206ee40ab0e5639b79c7781b8"
   integrity sha512-eVEcLJL3GcPQBQcD77jI3fZ4MMx+iD02Px2Z1lDw+cn/iGCeQkWWAPQs4Tp+HGR1rTL5JO+unyhzN8V9X7OYmw==
 
-"@feathersjs/errors@^4.5.15":
-  version "4.5.15"
-  resolved "https://registry.npmjs.org/@feathersjs/errors/-/errors-4.5.15.tgz#ec371ca9905685e33f41e331975182f36241d1bd"
-  integrity sha512-EJAYWMsWZlUA/halbgZBc6eP2d3HPkHi5GzprYEK58GCh51KJ36VjX7VKVEnMjgBSED+PE00tpr3ZvUC4nUR+Q==
-  dependencies:
-    debug "^4.3.3"
+"@feathersjs/errors@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-5.0.0.tgz#dc4f8ec73ed60aba24c0c3d023cd3bb4a1f8226d"
+  integrity sha512-bVir0nomgk8BSnpe5zcJ8JT2ly5xVsdH5KrMgA5f+E00NMu/2S8QoC3YF4WesYQ7WYg3uS6VulhPDj3MV6xLgw==
 
 "@feathersjs/feathers@^4.5.15":
   version "4.5.15"
