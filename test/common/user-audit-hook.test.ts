@@ -1,9 +1,4 @@
-import feathers, {
-  NullableId,
-  Params,
-  ServiceMethods,
-  SetupMethod,
-} from '@feathersjs/feathers';
+import { feathers, NullableId, Params } from '@feathersjs/feathers';
 import userAudit from '../../src/common/user-audit-hook';
 
 interface Message {
@@ -12,7 +7,7 @@ interface Message {
 }
 
 describe("'user-audit' hook", () => {
-  let app: Partial<ServiceMethods<Message> & SetupMethod>;
+  let app;
 
   beforeAll(() => {
     // Create a new plain Feathers application
@@ -20,7 +15,7 @@ describe("'user-audit' hook", () => {
 
     // Register a dummy custom service that just return the
     // message data back
-    app.use('/messages', {
+    app.use('messages', {
       messages: [],
       incrementNode: 0,
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -57,7 +52,7 @@ describe("'user-audit' hook", () => {
       },
     });
 
-    app.use('/notaffected', {
+    app.use('notaffected', {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async create(data: any) {
         return data;

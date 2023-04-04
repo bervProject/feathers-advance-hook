@@ -1,6 +1,6 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
-import { Hook, HookContext } from '@feathersjs/feathers';
+import { HookContext } from '@feathersjs/feathers';
 import { GeneralError } from '@feathersjs/errors';
 
 // default type definition
@@ -43,7 +43,7 @@ export default ({
   updatedColumn = defaultUpdatedColumn,
   deletedColumn = defaultDeletedColumn,
   userProperty = defaultUserProperty,
-}: UserAuditHookOptions = {}): Hook => {
+}: UserAuditHookOptions = {}) => {
   return async (context: HookContext) => {
     const { app, data, method, service, type, params } = context;
     const { disableSoftDelete } = params;

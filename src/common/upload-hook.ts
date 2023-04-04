@@ -1,12 +1,12 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
-import { Hook, HookContext } from '@feathersjs/feathers';
+import { HookContext } from '@feathersjs/feathers';
 import { BadRequest, GeneralError } from '@feathersjs/errors';
 import { Storage } from '@google-cloud/storage';
 import { extensions, lookup } from 'mime-types';
 import { v4 as uuid } from 'uuid';
 
-export default (): Hook => {
+export default () => {
   return async (context: HookContext) => {
     const { app, method, type } = context;
     if (method === 'create' && type === 'after') {

@@ -1,10 +1,10 @@
 import { BadRequest, GeneralError } from '@feathersjs/errors';
-import feathers, { Application } from '@feathersjs/feathers';
+import { feathers } from '@feathersjs/feathers';
 import uploadHook from '../../src/common/upload-hook';
 
 describe("'user-audit' hook", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let app: Application<any>;
+  let app;
 
   beforeAll(() => {
     // Create a new plain Feathers application
@@ -12,7 +12,7 @@ describe("'user-audit' hook", () => {
 
     // Register a dummy custom service that just return the
     // message data back
-    app.use('/uploads', {
+    app.use('uploads', {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       async create(data: any) {
         return data;
