@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/bervProject/feathers-advance-hook/compare/v2.0.0...v2.0.1) (2023-04-10)
+
+
+### Bug Fixes
+
+* Update publish method ([#518](https://github.com/bervProject/feathers-advance-hook/issues/518)) ([998f6b9](https://github.com/bervProject/feathers-advance-hook/commit/998f6b971c914cb050ef90181b95f9bb5cacce13))
+
 # [2.0.0](https://github.com/bervProject/feathers-advance-hook/compare/v1.2.10...v2.0.0) (2023-04-04)
 
 
