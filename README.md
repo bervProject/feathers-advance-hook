@@ -2,6 +2,8 @@
 
 Feathers Advance Hooks.
 
+**Note**: After `2.0.0`, will be uploaded to npmjs only.
+
 ## Build Status
 
 | CircleCI | Github Action (Test) | Codecov |
