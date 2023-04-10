@@ -9,7 +9,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '18.12'
+          node-version: '18.15'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -28,3 +28,11 @@ jobs:
       - run: # run test
           name: test
           command: yarn test
+
+workflows:
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: main
