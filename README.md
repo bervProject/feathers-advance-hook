@@ -2,6 +2,8 @@
 
 Feathers Advance Hooks.
 
+**Note**: After `2.0.0`, will be uploaded to npmjs only.
+
 ## Build Status
 
 | CircleCI | Github Action (Test) | Codecov |
@@ -21,7 +23,7 @@ MIT
 ```markdown
 MIT License
 
-Copyright (c) 2019 Bervianto Leo Pratama's Personal Projects
+Copyright (c) 2019-2023 Bervianto Leo Pratama's Personal Projects
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
