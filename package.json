@@ -37,7 +37,7 @@
     "@semantic-release/release-notes-generator": "^11.0.1",
     "@types/jest": "^29.2.5",
     "@types/mime-types": "^2.1.1",
-    "@types/node": "^18.15.11",
+    "@types/node": "^20.2.5",
     "@types/uuid": "^9.0.1",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
