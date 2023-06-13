@@ -1,11 +1,11 @@
 // rollup.config.mjs
-import typescript from 'rollup-plugin-typescript2';
+import typescript from '@rollup/plugin-typescript';
 import babel from '@rollup/plugin-babel';
 import { nodeResolve as resolve } from '@rollup/plugin-node-resolve';
 import external from 'rollup-plugin-peer-deps-external';
 import del from 'rollup-plugin-delete';
 import sizes from 'rollup-plugin-sizes';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import pkg from './package.json' assert { type: "json" };
