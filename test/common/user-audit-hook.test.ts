@@ -1,6 +1,7 @@
 import { feathers, NullableId, Params } from '@feathersjs/feathers';
 import userAudit from '../../src/common/user-audit-hook';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Message {
   messages: string[];
   incrementNode: number;
