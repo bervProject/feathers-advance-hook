@@ -28,7 +28,7 @@ jobs:
       - run: # run test
           name: test
           command: yarn test
-      - store_test_results:
+      - store_artifacts:
           path: coverage
 workflows:
   build:
