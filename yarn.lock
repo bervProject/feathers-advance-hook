@@ -1076,9 +1076,9 @@
   integrity sha512-8/vNe5XR1VqR3kRAGc4D24SeW0nfI2/srUkjGksa9Js2qTVmGlOk5HfLA+Uw2GMuVs2/JYnexpV5WPDtjfMWNw==
 
 "@feathersjs/errors@^5.0.1":
-  version "5.0.13"
-  resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-5.0.13.tgz#573f579d40594e9c673345ab39859fc4def7f54c"
-  integrity sha512-1SRkUUFtTYE35RIxrJ1IxJkbEom7MlGlIc49BjhWbVKEmbwAMpwyQdjMPkBtWdG2iei3j+bEtW84ks8nYBuZCQ==
+  version "5.0.21"
+  resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-5.0.21.tgz#6a15635731ec76d8df9d88b87d1e4ae9ad5592fb"
+  integrity sha512-HDuhPbR8XUJjGnNkS8ushQmFJuVW6dZz79dT7oflSSP/m1RvQDNtA8DIXxTpTlM9RIYZQbflWwc7oVBx/ikxSw==
 
 "@feathersjs/feathers@^5.0.1":
   version "5.0.21"
