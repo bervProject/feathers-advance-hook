@@ -55,7 +55,7 @@
     "semantic-release": "^24.0.0",
     "shx": "^0.3.4",
     "ts-jest": "^29.0.5",
-    "typedoc": "^0.25.0",
+    "typedoc": "^0.26.3",
     "typescript": "~5.4.5"
   },
   "dependencies": {
