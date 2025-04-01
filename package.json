@@ -56,7 +56,7 @@
     "shx": "^0.3.4",
     "ts-jest": "^29.0.5",
     "typedoc": "^0.27.2",
-    "typescript": "~5.7.2"
+    "typescript": "~5.8.2"
   },
   "dependencies": {
     "@feathersjs/errors": "^5.0.1",
