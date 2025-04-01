@@ -3,7 +3,6 @@ import { feathers } from '@feathersjs/feathers';
 import uploadHook from '../../src/common/upload-hook';
 
 describe("'user-audit' hook", () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let app;
 
   beforeAll(() => {
