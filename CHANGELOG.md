@@ -1,3 +1,11 @@
+## [2.0.3](https://github.com/bervProject/feathers-advance-hook/compare/v2.0.2...v2.0.3) (2025-04-01)
+
+
+### Bug Fixes
+
+* update eslint ([625ed66](https://github.com/bervProject/feathers-advance-hook/commit/625ed66cb9495f4f48128cfc0a10add69c9ac155))
+* update eslint ([c77ab51](https://github.com/bervProject/feathers-advance-hook/commit/c77ab513cf3a55f911873c9950df9bbfde654d6b))
+
 ## [2.0.2](https://github.com/bervProject/feathers-advance-hook/compare/v2.0.1...v2.0.2) (2025-04-01)
 
 
