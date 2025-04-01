@@ -1,3 +1,11 @@
+## [2.0.2](https://github.com/bervProject/feathers-advance-hook/compare/v2.0.1...v2.0.2) (2025-04-01)
+
+
+### Bug Fixes
+
+* fix releaser ([cbf12c2](https://github.com/bervProject/feathers-advance-hook/commit/cbf12c2b82ab584cccfe29518f2b69ee787ad21b))
+* update hook deps ([740778a](https://github.com/bervProject/feathers-advance-hook/commit/740778a2960bc61203483724d3646e3afc07e762))
+
 ## [2.0.1](https://github.com/bervProject/feathers-advance-hook/compare/v2.0.0...v2.0.1) (2023-04-10)
 
 
