@@ -6,9 +6,9 @@ Feathers Advance Hooks.
 
 ## Build Status
 
-| CircleCI | Github Action (Test) | Github Action (Generate Docs) | Codecov |
-|:--------:|:--------------------:|:-----------------------------:|:-------:|
-| [![CircleCI](https://circleci.com/gh/bervProject/feathers-advance-hook.svg?style=svg)](https://circleci.com/gh/bervProject/feathers-advance-hook) | ![Test](https://github.com/bervProject/feathers-advance-hook/workflows/Test/badge.svg) | ![Generate Docs](https://github.com/bervProject/feathers-advance-hook/workflows/Generate%20Docs/badge.svg) | [![codecov](https://codecov.io/gh/bervProject/feathers-advance-hook/branch/main/graph/badge.svg)](https://codecov.io/gh/bervProject/feathers-advance-hook) |
+| CircleCI | Github Action (Test) | Github Action (Generate Docs) | Github Action (Release) | Codecov |
+|:--------:|:--------------------:|:-----------------------------:|:-----------------------:|:-------:|
+| [![CircleCI](https://circleci.com/gh/bervProject/feathers-advance-hook.svg?style=svg)](https://circleci.com/gh/bervProject/feathers-advance-hook) | ![Test](https://github.com/bervProject/feathers-advance-hook/workflows/Test/badge.svg) | ![Generate Docs](https://github.com/bervProject/feathers-advance-hook/workflows/Generate%20Docs/badge.svg) | ![Release](https://github.com/bervProject/feathers-advance-hook/workflows/Release/badge.svg) | [![codecov](https://codecov.io/gh/bervProject/feathers-advance-hook/branch/main/graph/badge.svg)](https://codecov.io/gh/bervProject/feathers-advance-hook) |
 
 ## Install
 
