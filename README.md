@@ -6,9 +6,9 @@ Feathers Advance Hooks.
 
 ## Build Status
 
-| CircleCI | Github Action (Test) | Codecov |
-|:--------:|:--------------------:|:-------:|
-| [![CircleCI](https://circleci.com/gh/bervProject/feathers-advance-hook.svg?style=svg)](https://circleci.com/gh/bervProject/feathers-advance-hook) | ![Node CI](https://github.com/bervProject/feathers-advance-hook/workflows/Node%20CI/badge.svg) | [![codecov](https://codecov.io/gh/bervProject/feathers-advance-hook/branch/main/graph/badge.svg)](https://codecov.io/gh/bervProject/feathers-advance-hook) |
+| CircleCI | Github Action (Test) | Github Action (Generate Docs) | Codecov |
+|:--------:|:--------------------:|:-----------------------------:|:-------:|
+| [![CircleCI](https://circleci.com/gh/bervProject/feathers-advance-hook.svg?style=svg)](https://circleci.com/gh/bervProject/feathers-advance-hook) | ![Test](https://github.com/bervProject/feathers-advance-hook/workflows/Test/badge.svg) | ![Generate Docs](https://github.com/bervProject/feathers-advance-hook/workflows/Generate%20Docs/badge.svg) | [![codecov](https://codecov.io/gh/bervProject/feathers-advance-hook/branch/main/graph/badge.svg)](https://codecov.io/gh/bervProject/feathers-advance-hook) |
 
 ## Install
 
@@ -23,7 +23,7 @@ MIT
 ```markdown
 MIT License
 
-Copyright (c) 2019-2023 Bervianto Leo Pratama's Personal Projects
+Copyright (c) 2019-2025 Bervianto Leo Pratama's Personal Projects
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
