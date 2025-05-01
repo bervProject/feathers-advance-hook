@@ -20,7 +20,7 @@ yarn add @bervproject/feathers-advance-hook
 
 MIT
 
-```markdown
+```
 MIT License
 
 Copyright (c) 2019-2025 Bervianto Leo Pratama's Personal Projects
