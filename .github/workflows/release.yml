@@ -12,10 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 name: Release
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 permissions:
   contents: write
   issues: write
