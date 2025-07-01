@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "es2015",
+    "module": "es2020",
     "target": "es5",
     "rootDir": "src",
     "declaration": true,
@@ -10,8 +10,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "lib": [
-      "es2015",
-      "es2017"
+      "es2020",
+      "es2022"
     ],
     "strict": true
   },
