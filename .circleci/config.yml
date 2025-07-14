@@ -9,7 +9,7 @@ jobs:
       - checkout
       - node/install:
           install-yarn: true
-          node-version: '20.11'
+          node-version: '24.4'
       - restore_cache:
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
