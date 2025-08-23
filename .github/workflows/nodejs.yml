@@ -41,5 +41,5 @@ jobs:
       run: yarn build
     - name: Build Docs
       run: yarn docs
-    - uses: codecov/codecov-action@v5.4.3
+    - uses: codecov/codecov-action@v5.5.0
       if: ${{ matrix.node-version == '22.x'}}
