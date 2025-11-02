@@ -24,7 +24,7 @@
     }
   ],
   "devDependencies": {
-    "@babel/core": "^7.27.7",
+    "@babel/core": "^7.28.5",
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/eslintrc": "^3.3.1",
@@ -43,6 +43,7 @@
     "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.35.1",
     "@typescript-eslint/parser": "^8.35.1",
+    "babel-jest": "^30.2.0",
     "conventional-changelog-conventionalcommits": "^9.0.0",
     "eslint": "^9.30.0",
     "eslint-config-prettier": "^10.1.5",
@@ -66,12 +67,12 @@
     "@google-cloud/storage": "^7.16.0",
     "dist": "^0.1.2",
     "mime-types": "^3.0.1",
-    "uuid": "^11.1.0"
+    "uuid": "^13.0.0"
   },
   "peerDependencies": {
     "@feathersjs/errors": ">=5.0",
     "@feathersjs/feathers": ">=5.0",
-    "uuid": ">=11.0"
+    "uuid": ">=13.0"
   },
   "keywords": [
     "FeathersJs",
