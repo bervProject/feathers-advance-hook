@@ -1111,9 +1111,9 @@
   integrity sha512-eXwWVGLUTyc6WKSROtoM/YCSUMR2vwx+m6iDAR2CwLqqQyDvbdFP1nYcJqQ+wIrtXPcfg06uc/v7OFU9TPvD0g==
 
 "@feathersjs/errors@^5.0.34":
-  version "5.0.37"
-  resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-5.0.37.tgz#bf6ff2bdf1a954e13b1eb5d5c511b1190023e6a7"
-  integrity sha512-WKA6XwPLhHf1idU48iuruBaL6PYzcj0LOfBXycxgvS2DuRu191Uzr68OM/n6SVVRl7B2F72aG/Jko6GRmzVggQ==
+  version "5.0.39"
+  resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-5.0.39.tgz#eff45c06c508b95276dce839c3b39645c3d9a894"
+  integrity sha512-kkliDGMN+6Ool8cifYK6miuCBDY9jY9KJzBkXgJPSidSQ2Txpq6gpPpbJUH/n+QpGLTuSTTm3ck/jLztdlonvg==
 
 "@feathersjs/feathers@^5.0.34":
   version "5.0.39"
