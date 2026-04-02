@@ -29,9 +29,9 @@
     "@babel/preset-typescript": "^7.27.1",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^10.0.1",
-    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-babel": "^7.0.0",
     "@rollup/plugin-node-resolve": "^16.0.1",
-    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-terser": "^1.0.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^10.0.1",
@@ -54,12 +54,12 @@
     "rollup-plugin-delete": "^3.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-sizes": "^1.1.0",
-    "rollup-plugin-typescript2": "^0.36.0",
+    "rollup-plugin-typescript2": "^0.37.0",
     "semantic-release": "^25.0.1",
     "shx": "^0.4.0",
     "ts-jest": "^29.4.0",
     "typedoc": "^0.28.7",
-    "typescript": "~5.9.2"
+    "typescript": "~6.0.2"
   },
   "dependencies": {
     "@feathersjs/errors": "^5.0.34",
