@@ -1,11 +1,10 @@
 {
   "compilerOptions": {
-    "module": "es2020",
-    "target": "es5",
+    "module": "es2022",
+    "target": "es2022",
     "rootDir": "src",
     "declaration": true,
     "outDir": "./dist",
-    "moduleResolution": "node",
     "declarationDir": "./dist",
     "esModuleInterop": true,
     "skipLibCheck": true,
