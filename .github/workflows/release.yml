@@ -43,7 +43,6 @@ jobs:
         node-version: '24.x'
         registry-url: 'https://registry.npmjs.org'
         scope: '@bervproject'
-        always-auth: true
     - name: Get bot user ID
       id: bot-user-id
       run: |
