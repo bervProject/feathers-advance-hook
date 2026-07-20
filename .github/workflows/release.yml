@@ -23,6 +23,8 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-24.04
+    env:
+      NODE_AUTH_TOKEN: ${{ github.token }} 
     steps:
     - name: Generate bot app token
       id: generate_token
@@ -43,7 +45,6 @@ jobs:
         node-version: '24.x'
         registry-url: 'https://registry.npmjs.org'
         scope: '@bervproject'
-        always-auth: true
     - name: Get bot user ID
       id: bot-user-id
       run: |

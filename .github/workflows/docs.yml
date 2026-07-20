@@ -19,6 +19,8 @@ on:
 jobs:
   docs:
     runs-on: ubuntu-24.04
+    env:
+      NODE_AUTH_TOKEN: ${{ github.token }}
     steps:
     - uses: actions/checkout@v7
     - name: Use Node.js 24
@@ -27,7 +29,6 @@ jobs:
         node-version: '24.x'
         registry-url: 'https://npm.pkg.github.com'
         scope: '@bervproject'
-        always-auth: true
     - name: Get yarn cache directory path
       id: yarn-cache-dir-path
       run: echo "::set-output name=dir::$(yarn cache dir)"
