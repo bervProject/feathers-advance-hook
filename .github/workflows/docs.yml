@@ -19,6 +19,8 @@ on:
 jobs:
   docs:
     runs-on: ubuntu-24.04
+    env:
+      NODE_AUTH_TOKEN: ${{ github.token }}
     steps:
     - uses: actions/checkout@v7
     - name: Use Node.js 24
