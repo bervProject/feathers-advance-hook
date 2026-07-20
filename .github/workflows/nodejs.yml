@@ -32,6 +32,7 @@ jobs:
       run: yarn --frozen-lockfile
       env:
         CI: true
+        NODE_AUTH_TOKEN: ${{ github.token }} 
     - name: Lint Source Code
       run: yarn lint
     - name: Unit Test
