@@ -32,9 +32,9 @@
     "@rollup/plugin-babel": "^7.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-terser": "^1.0.0",
-    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
-    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/git": "^11.0.1",
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.0",
     "@types/jest": "^30.0.0",
@@ -59,7 +59,7 @@
     "shx": "^0.4.0",
     "ts-jest": "^29.4.9",
     "typedoc": "^0.28.18",
-    "typescript": "~6.0.2"
+    "typescript": "~7.0.2"
   },
   "dependencies": {
     "@feathersjs/errors": "^5.0.44",
